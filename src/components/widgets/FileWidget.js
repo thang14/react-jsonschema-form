@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import TextField from "material-ui/TextField";
 import { dataURItoBlob, shouldRender, setState } from "../../utils";
 
 function addNameToDataURL(dataURL, name) {
@@ -94,7 +94,7 @@ class FileWidget extends Component {
     return (
       <div>
         <p>
-          <input
+          <TextField
             ref={ref => (this.inputRef = ref)}
             id={id}
             type="file"

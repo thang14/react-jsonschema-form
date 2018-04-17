@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import TextField from "material-ui/TextField";
 function TextareaWidget(props) {
   const {
     id,
@@ -18,10 +18,13 @@ function TextareaWidget(props) {
   const _onChange = ({ target: { value } }) => {
     return onChange(value === "" ? options.emptyValue : value);
   };
+
+  options.rows = options.rows || 5;
+
   return (
-    <textarea
+    <TextField
       id={id}
-      className="form-control"
+      multiLine={true}
       value={typeof value === "undefined" ? "" : value}
       placeholder={placeholder}
       required={required}

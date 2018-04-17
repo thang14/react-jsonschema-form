@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DescriptionField from "../fields/DescriptionField.js";
-
+import TextField from "material-ui/TextField";
 function CheckboxWidget(props) {
   const {
     schema,
@@ -20,7 +20,7 @@ function CheckboxWidget(props) {
         <DescriptionField description={schema.description} />
       )}
       <label>
-        <input
+        <TextField
           type="checkbox"
           id={id}
           checked={typeof value === "undefined" ? false : value}

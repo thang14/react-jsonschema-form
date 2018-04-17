@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import TextField from "material-ui/TextField";
 function RadioWidget(props) {
   const {
     options,
@@ -23,7 +23,7 @@ function RadioWidget(props) {
         const disabledCls = disabled || readonly ? "disabled" : "";
         const radio = (
           <span>
-            <input
+            <TextField
               type="radio"
               checked={checked}
               name={name}

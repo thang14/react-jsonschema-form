@@ -14,7 +14,6 @@ import {
 } from "../../utils";
 import UnsupportedField from "./UnsupportedField";
 
-const REQUIRED_FIELD_SYMBOL = "*";
 const COMPONENT_TYPES = {
   array: "ArrayField",
   boolean: "BooleanField",
@@ -45,20 +44,6 @@ function getFieldComponent(schema, uiSchema, idSchema, fields) {
           />
         );
       };
-}
-
-function Label(props) {
-  const { label, required, id } = props;
-  if (!label) {
-    // See #312: Ensure compatibility with old versions of React.
-    return <div />;
-  }
-  return (
-    <label className="control-label" htmlFor={id}>
-      {label}
-      {required && <span className="required">{REQUIRED_FIELD_SYMBOL}</span>}
-    </label>
-  );
 }
 
 function Help(props) {
@@ -95,26 +80,13 @@ function ErrorList(props) {
 }
 
 function DefaultTemplate(props) {
-  const {
-    id,
-    classNames,
-    label,
-    children,
-    errors,
-    help,
-    description,
-    hidden,
-    required,
-    displayLabel,
-  } = props;
+  const { classNames, children, errors, help, hidden } = props;
   if (hidden) {
     return children;
   }
 
   return (
     <div className={classNames}>
-      {displayLabel && <Label label={label} required={required} id={id} />}
-      {displayLabel && description ? description : null}
       {children}
       {errors}
       {help}

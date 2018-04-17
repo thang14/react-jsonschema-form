@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import TextField from "material-ui/TextField";
 
 function selectValue(value, selected, all) {
   const at = all.indexOf(value);
@@ -23,7 +24,7 @@ function CheckboxesWidget(props) {
         const disabledCls = disabled || readonly ? "disabled" : "";
         const checkbox = (
           <span>
-            <input
+            <TextField
               type="checkbox"
               id={`${id}_${index}`}
               checked={checked}

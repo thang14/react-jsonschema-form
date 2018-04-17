@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import TextField from "material-ui/TextField";
 import { asNumber } from "../../utils";
 
 /**
@@ -54,8 +54,9 @@ function SelectWidget(props) {
   const { enumOptions, enumDisabled } = options;
   const emptyValue = multiple ? [] : "";
   return (
-    <select
+    <TextField
       id={id}
+      select
       multiple={multiple}
       className="form-control"
       value={typeof value === "undefined" ? emptyValue : value}
@@ -89,7 +90,7 @@ function SelectWidget(props) {
           </option>
         );
       })}
-    </select>
+    </TextField>
   );
 }
 

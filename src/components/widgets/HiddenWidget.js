@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import TextField from "material-ui/TextField";
 function HiddenWidget({ id, value }) {
   return (
-    <input
+    <TextField
       type="hidden"
       id={id}
       value={typeof value === "undefined" ? "" : value}
