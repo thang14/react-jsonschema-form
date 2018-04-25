@@ -14,6 +14,7 @@ function TextareaWidget(props) {
     onChange,
     onBlur,
     onFocus,
+    label,
   } = props;
   const _onChange = ({ target: { value } }) => {
     return onChange(value === "" ? options.emptyValue : value);
@@ -24,7 +25,9 @@ function TextareaWidget(props) {
   return (
     <TextField
       id={id}
-      multiLine={true}
+      multiline={true}
+      fullWidth={true}
+      label={label}
       value={typeof value === "undefined" ? "" : value}
       placeholder={placeholder}
       required={required}

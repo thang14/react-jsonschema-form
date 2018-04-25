@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import Button from "material-ui/Button";
 import { default as DefaultErrorList } from "./ErrorList";
 import {
   getDefaultFormState,
@@ -222,9 +222,9 @@ export default class Form extends Component {
           children
         ) : (
           <p>
-            <button type="submit" className="btn btn-info">
+            <Button variant="raised" color="primary">
               Submit
-            </button>
+            </Button>
           </p>
         )}
       </form>

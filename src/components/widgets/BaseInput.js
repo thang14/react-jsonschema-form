@@ -32,6 +32,7 @@ function BaseInput(props) {
 
   return (
     <TextField
+      fullWidth={true}
       readOnly={readonly}
       disabled={disabled}
       autoFocus={autofocus}
